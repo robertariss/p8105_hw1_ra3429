@@ -32,3 +32,12 @@ The penguins data set consists of the following:
 
 * For example, the mean flipper length in penguins without missing data was `r round(mean(pull(penguins, flipper_length_mm), na.rm = TRUE), 2)`
 
+Scatterplot
+```{r echo=FALSE, warning=FALSE}
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
+
+ggsave("Scatterplot.jpg")
+```
+
+
+
