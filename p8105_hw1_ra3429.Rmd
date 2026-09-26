@@ -39,5 +39,43 @@ ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)
 ggsave("Scatterplot.jpg")
 ```
 
+# Section 3: Variable Types and Coercion
+
+We will create a dataframe with multiple types of variables as below:
+```{r}
+problem_3_df = 
+  tibble(
+    problem_3_num = rnorm(10),
+    problem_3_fac = problem_3_num > 0,
+    problem_3_char = c("my", "name", "is", "rob", "this", "is", "the", "homework", "one", "submission" ),
+    problem_3_factor = factor(c("NYHAI", "NYHAII", "NYHAIII", "NYHAI", "NYHAII", "NYHAIII", "NYHAI", "NYHAII", "NYHAIII", "NYHAI"))
+  )
+```
+
+We will attempt to take the mean of each of these types of variables:
+```{r}
+mean(pull(problem_3_df, problem_3_num))
+mean(pull(problem_3_df, problem_3_fac))
+mean(pull(problem_3_df, problem_3_char))
+mean(pull(problem_3_df, problem_3_factor))
+```
+
+We are unable to calculate a mean for character or factor type variables.
+
+Instead, we will try to convert variables to numeric:
+
+```{r echo = TRUE, results = 'hide'}
+as.numeric(pull(problem_3_df, problem_3_fac))
+as.numeric(pull(problem_3_df, problem_3_char))
+as.numeric(pull(problem_3_df, problem_3_factor))
+```
+
+We are only able to convert the logical and factor variables and not the string type character variable to numeric. We cannot convert the character string type variable to a meaningful number, so we cannot take a mean of this variable.  
+
+
+
+
+  
+  
 
 
