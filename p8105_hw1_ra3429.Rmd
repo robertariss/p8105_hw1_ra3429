@@ -5,3 +5,30 @@ date: "2026-09-26"
 output: github_document
 ---
 
+This is an R markdown document for homework 1
+
+# Section 0: Libraries
+
+```{r echo=TRUE}
+library(tidyverse)
+```
+
+# Section 1: Data Import
+```{r}
+data("penguins", package = "palmerpenguins")
+```
+
+# Section 2: Description of the Penguins Data Set
+
+The penguins data set consists of the following:
+
+* There are `r nrow(penguins)` rows within the penguins data set. 
+
+* There are `r ncol(penguins)` columns within the penguins data set. 
+
+* The `r nrow(penguins)` rows represent data on each individual penguin
+
+* The `r ncol(penguins)` columns represent characteristics of each penguin including `r colnames(penguins)` 
+
+* For example, the mean flipper length in penguins without missing data was `r round(mean(pull(penguins, flipper_length_mm), na.rm = TRUE), 2)`
+
