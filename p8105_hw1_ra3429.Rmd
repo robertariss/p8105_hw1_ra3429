@@ -1,0 +1,7 @@
+---
+title: "p8105_hw1_ra3429"
+author: "Robert Ariss"
+date: "2026-09-26"
+output: github_document
+---
+
